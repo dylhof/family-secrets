@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Header from '../Header/Header';
+import NavBar from '../NavBar/NavBar';
+import Error from '../../components/Error/Error';
+import Loading from '../../components/Loading/Loading';
 
 class App extends Component {
+
   render() {
+    const { error, isLoading} = this.props
     return (
       <div className="App">
         <Header/>
+        <NavBar/>
+        {error && <Error/>}
+        {isLoading && <Loading/>}
       </div>
     );
   }
 }
 
-export default App;
+export const mapStateToProps = state => ({
+  error: state.error,
+  isLoading: state.isLoading
+});
+
+export default connect(mapStateToProps)(App);
