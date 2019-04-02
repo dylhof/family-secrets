@@ -5,7 +5,7 @@ import NavBar from '../NavBar/NavBar';
 import Error from '../../components/Error/Error';
 import Loading from '../../components/Loading/Loading';
 
-class App extends Component {
+export class App extends Component {
 
   render() {
     const { error, isLoading} = this.props

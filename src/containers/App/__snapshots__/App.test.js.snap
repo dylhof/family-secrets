@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App Component should match the snapshot 1`] = `
+<div
+  className="App"
+>
+  <Header />
+  <NavBar />
+</div>
+`;
+
+exports[`App App Component should match the snapshot when isLoading is true 1`] = `
+<div
+  className="App"
+>
+  <Header />
+  <NavBar />
+  <Loading />
+</div>
+`;
+
+exports[`App App Component should match the snapshot with an error in props 1`] = `
+<div
+  className="App"
+>
+  <Header />
+  <NavBar />
+  <Error />
+</div>
+`;
