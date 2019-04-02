@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Header from '../Header/Header';
 import NavBar from '../NavBar/NavBar';
 import Error from '../../components/Error/Error';
 import Loading from '../../components/Loading/Loading';
+
 
 export class App extends Component {
 
@@ -26,3 +28,8 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(App);
+
+App.propTypes = {
+  error: PropTypes.string,
+  isLoading: PropTypes.bool
+}
