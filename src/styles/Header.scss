@@ -1,0 +1,22 @@
+.Header--header {
+  grid-area: 'header';
+  background-color: $body-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  h1 {
+    font-family: $title-font;
+    color: $main-color;
+    margin: 20px;
+    font-size: 40px;
+  }
+
+  .Header--img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid $dark-accent-color;
+    margin: 20px
+  }
+}
