@@ -2,8 +2,12 @@ import React from 'react';
 
 const Header = () => {
   return(
-    <header>
-      <h1>Family Stories</h1>
+    <header className='Header--header'>
+      <h1>Family Secrets</h1>
+      <img 
+        src='https://i.imgur.com/pmla6oJ.jpg' 
+        alt='You'
+        className='Header--img'/>
     </header>
   )
 };
