@@ -1,8 +1,12 @@
+body {
+  background-color: $body-color;
+}
+
 .App {
- display: grid;
- grid-template-rows: .5fr .2fr 1fr;
- grid-template-areas: 
-  'header',
-  'navbar',
-  'body'
+  display: grid;
+  grid-template-rows: .5fr .2fr 1fr;
+  grid-template-areas: 
+    'header',
+    'navbar',
+    'body';
 }
