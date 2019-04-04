@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 export class NavBar extends Component{
   render() {
     return(
-      <nav>
+      <nav className='NavBar--nav'>
         <select>
           <option>Select a Family</option>
         </select>

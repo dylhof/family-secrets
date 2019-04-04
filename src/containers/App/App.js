@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import NavBar from '../NavBar/NavBar';
 import Error from '../../components/Error/Error';
 import Loading from '../../components/Loading/Loading';
+import CardArea from '../../containers/CardArea/CardArea';
 
 
 export class App extends Component {
@@ -15,6 +16,7 @@ export class App extends Component {
       <div className="App">
         <Header/>
         <NavBar/>
+        <CardArea/>
         {error && <Error/>}
         {isLoading && <Loading/>}
       </div>
