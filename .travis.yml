@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- node
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  app: family-secrets
+  skip_cleanup: true
+  api_key:
+    secure: eibkJxl5kGlFDFdqdqmIqSIVx6OQ0Q3bZCnyRWUcsYOVFfmo/jLm5/TGr52xNCpDflv0Kw+jFEcz9BeNYh1obJNNDwxbEoPSeRXqaWFqdYdgWs1N0v/X7dDzusYLPeAuH8P+3sNuToLtxCMk9I14Z3Myci9vGw4EvFAQE4+lsl6f+/m/dEWnJmNiY0uVa9V9IVPc19YMtv9M5NW9ynht7nACVRmy36E7uolkGEFKgVFCIc05au0/StgpFtftSRXfMmXUEu0Oo80cj/LZtbwbDUfa3JqAM35qzdvsy3u+OACgm/xYu9rOmP9myvDYKQPbxBkirAB/4dzmgYwtG76ovq/x4wVkfOL5XwFfwRwhh+TaTEd8Q57xoY2xCoq9QI2X2Keuzbtg1ObnxNrWsn7191438Slz0joRkCHwIm9riV9kRhXT6e2PDua8OAz2Ssgq/DwAQ8l0wfZ3HJit2C8QWt0pGNMGZmxThj45TWD94qNc5HuqpEvREev5ATGeO0mcJSpCk4DVYvQY/8nDx0Xtyc1pyRg367r8ApsVPYROBEZFOL0hd1tmzv+PiQr83jYxdZ2XgCaS22O5z2xSZ8dILW7W7Gq+xYq8co46Jm5BEmTFlTIcBES/3COHaJbwkszBdyk1UeTYs946PZCqazpJAWXoHrv4oXVwdbh6tdmiijQ=
