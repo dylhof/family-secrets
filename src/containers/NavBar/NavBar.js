@@ -10,7 +10,7 @@ export class NavBar extends Component{
         <ul>
           <li>Stories</li>
           <li>Photos</li>
-          <li>Recipies</li>
+          <li>Recipes</li>
         </ul>
       </nav>
     )
