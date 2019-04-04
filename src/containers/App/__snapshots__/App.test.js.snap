@@ -5,8 +5,8 @@ exports[`App App Component should match the snapshot 1`] = `
   className="App"
 >
   <Header />
-  <NavBar />
-  <CardArea />
+  <Connect(NavBar) />
+  <Connect(CardArea) />
 </div>
 `;
 
@@ -15,8 +15,8 @@ exports[`App App Component should match the snapshot when isLoading is true 1`] 
   className="App"
 >
   <Header />
-  <NavBar />
-  <CardArea />
+  <Connect(NavBar) />
+  <Connect(CardArea) />
   <Loading />
 </div>
 `;
@@ -26,8 +26,8 @@ exports[`App App Component should match the snapshot with an error in props 1`] 
   className="App"
 >
   <Header />
-  <NavBar />
-  <CardArea />
+  <Connect(NavBar) />
+  <Connect(CardArea) />
   <Error />
 </div>
 `;
