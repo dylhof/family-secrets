@@ -8,6 +8,9 @@ exports[`NavBar should match the snapshot 1`] = `
     <option>
       Select a Family
     </option>
+    <option>
+      Family1
+    </option>
   </select>
   <ul>
     <li>
@@ -17,7 +20,7 @@ exports[`NavBar should match the snapshot 1`] = `
       Photos
     </li>
     <li>
-      Recipies
+      Recipes
     </li>
   </ul>
 </nav>
