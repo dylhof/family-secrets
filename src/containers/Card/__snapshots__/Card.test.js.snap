@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot if the current View is Recipes 1`] = `
+<div>
+  <div
+    className="Card--div"
+  >
+    <h3>
+      soup
+    </h3>
+    <p>
+      ingredients
+    </p>
+    <div>
+      <ul>
+        <li
+          key="0"
+        >
+          carrots
+        </li>
+        <li
+          key="1"
+        >
+           broth
+        </li>
+        <li
+          key="2"
+        >
+           chicken
+        </li>
+        <li
+          key="3"
+        >
+           salt
+        </li>
+        <li
+          key="4"
+        >
+           pepper
+        </li>
+        <li
+          key="5"
+        >
+           noodles
+        </li>
+      </ul>
+    </div>
+    <p>
+      instructions
+    </p>
+    <p />
+  </div>
+</div>
+`;
+
+exports[`Card should match the snapshot if the current View is Stories 1`] = `
+<div>
+  <div
+    className="Card--div"
+  >
+    <h3>
+      the family pony
+    </h3>
+    <p
+      className="Card--p--story"
+    >
+      do some stuff Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo nunc, dignissim et bibendum pulvinar, tristique in nisi. Phasellus consectetur ullamcorper libero, eu scelerisque nunc finibus ut. Pellentesque in purus laoreet, tristique leo sed, sodales nisl. Nullam aliquet et nunc sit amet cursus. Phasellus tempor mauris ac orci tincidunt, a lacinia massa iaculis. Phasellus ipsum nisi, bibendum ac maximus hendrerit, congue quis felis. Curabitur quam nisl, tempor vel dolor a, suscipit tincidunt nisl. Phasellus leo ex, dictum id dapibus ut, egestas sed massa. Integer et lacinia felis. Nullam dui risus, suscipit in finibus nec, lacinia nec erat. Curabitur non justo purus. Nam at tempor arcu. Aliquam pharetra at nisi in placerat. Sed dignissim fermentum dui, ut feugiat nunc rutrum ac.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card should match the snapshot if the current View is Stories 2`] = `
+<div>
+  <div
+    className="Card--div"
+  >
+    <img
+      alt="wall cat"
+      src="https://i.imgur.com/dRxnay8.jpg"
+    />
+    <p>
+      wall cat
+    </p>
+  </div>
+</div>
+`;

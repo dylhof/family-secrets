@@ -1,0 +1,28 @@
+.Card--div {
+  height: 300px;
+  width: 200px;
+  border: 2px solid $dark-accent-color;
+  border-radius: 5px;
+
+  img {
+    width: 200px;
+    max-height: 250px;
+    overflow: scroll;
+  }
+
+  .Card--p--story{
+    height: 250px;
+    overflow: scroll;
+    font-family: $body-font;
+    font-size: 13px;
+    padding: 5px;
+  }
+
+  h3 {
+    font-family: $title-font;
+    font-size: 20px;
+    color: $main-color;
+    text-align: center;
+    margin: 5px;
+  }
+}

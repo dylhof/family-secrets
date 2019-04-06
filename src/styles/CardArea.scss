@@ -1,4 +1,9 @@
-.CardArea--div {
+.CardArea {
+
+  .CardArea--div{
+    display: flex;
+    justify-content: space-evenly;
+  }
 
   h2{
     font-family: $title-font;
