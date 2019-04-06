@@ -5,8 +5,7 @@ exports[`CardArea should match the snapshot if current View is Photos 1`] = `
   className="CardArea"
 >
   <h2>
-    My Family 
-    Photos
+    Login to see your family Secrets!
   </h2>
   <div
     className="CardArea--div"
@@ -19,8 +18,7 @@ exports[`CardArea should match the snapshot if current View is Recipes 1`] = `
   className="CardArea"
 >
   <h2>
-    My Family 
-    Recipes
+    Login to see your family Secrets!
   </h2>
   <div
     className="CardArea--div"
@@ -33,8 +31,7 @@ exports[`CardArea should match the snapshot if current View is Stories 1`] = `
   className="CardArea"
 >
   <h2>
-    My Family 
-    Stories
+    Login to see your family Secrets!
   </h2>
   <div
     className="CardArea--div"
