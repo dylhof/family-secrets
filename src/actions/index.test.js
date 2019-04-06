@@ -1,5 +1,5 @@
 import * as actions from './index';
-import { truncate } from 'fs';
+import * as mockData from '../mockData';
 
 describe('actions', () => {
 
@@ -56,6 +56,42 @@ describe('actions', () => {
       type: 'LOG_OUT'
     };
     const result = actions.logoutCurrentUser();
+    expect(result).toEqual(expected);
+  });
+
+  it('should return an object with a type of SET_FAMILIES', () => {
+    const expected = {
+      type: 'SET_FAMILIES',
+      families: mockData.families
+    }
+    const result = actions.setFamilies(mockData.families);
+    expect(result).toEqual(expected);
+  });
+
+  it('should return an object with a type of SET_RECIPES and recipes', () => {
+     const expected = {
+       type: 'SET_RECIPES',
+       recipes: mockData.recipes
+     };
+     const result = actions.setRecipes(mockData.recipes);
+     expect(result).toEqual(expected);
+  });
+
+  it('should return an object with a type of SET_STORIES and stories', () => {
+    const expected = {
+      type: 'SET_STORIES',
+      stories: mockData.stories
+    };
+    const result = actions.setStories(mockData.stories);
+    expect(result).toEqual(expected);
+  });
+
+  it('should return an object with a type of SET_PHOTOS and photos', () => {
+    const expected = {
+      type: 'SET_PHOTOS',
+      photos: mockData.photos
+    };
+    const result = actions.setPhotos(mockData.photos);
     expect(result).toEqual(expected);
   });
 

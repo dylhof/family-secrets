@@ -23,8 +23,28 @@ export const setCurrentUser = (id, name, email) => ({
   id,
   name,
   email
-})
+});
 
 export const logoutCurrentUser = () => ({
   type: 'LOG_OUT'
+});
+
+export const setFamilies = (families) => ({
+  type: 'SET_FAMILIES',
+  families
 })
+
+export const setRecipes = (recipes) => ({
+  type: 'SET_RECIPES',
+  recipes
+});
+
+export const setStories = (stories) => ({
+  type: 'SET_STORIES',
+  stories
+});
+
+export const setPhotos = (photos) => ({
+  type: 'SET_PHOTOS',
+  photos
+});
