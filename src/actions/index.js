@@ -17,3 +17,14 @@ export const setCurrentFamily = (id) => ({
   type: 'SET_CURRENT_FAMILY',
   currentFamily: id
 })
+
+export const setCurrentUser = (id, name, email) => ({
+  type: 'SET_CURRENT_USER',
+  id,
+  name,
+  email
+})
+
+export const logoutCurrentUser = () => ({
+  type: 'LOG_OUT'
+})
