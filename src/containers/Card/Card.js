@@ -38,8 +38,8 @@ export class Card extends Component {
 
   generateIngredients = (ingredients) => {
     const splitIngredients = ingredients.split('\n');
-    const ingredientsToShow = splitIngredients.map(ingredient => {
-      return <li>{ingredient}</li>
+    const ingredientsToShow = splitIngredients.map((ingredient, index)=> {
+      return <li key={index}>{ingredient}</li>
     })
     return(
       <ul>
