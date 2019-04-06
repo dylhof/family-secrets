@@ -12,5 +12,6 @@ describe('currentFamilyReducer', () => {
     const mockFamilyId = 2;
     const initialState = '';
     const result = currentFamilyReducer(initialState, actions.setCurrentFamily(mockFamilyId));
+    expect(result).toEqual(mockFamilyId)
   });
 });
