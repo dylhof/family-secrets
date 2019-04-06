@@ -1,15 +1,79 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { setCurrentUser, logoutCurrentUser } from '../../actions';
 
-const Header = () => {
-  return(
-    <header className='Header--header'>
-      <h1>Family Secrets</h1>
-      <img 
-        src='https://i.imgur.com/pmla6oJ.jpg' 
-        alt='You'
-        className='Header--img'/>
-    </header>
-  )
+export class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+
+  handleChange = (event) => {
+    this.setState({[event.target.name]: event.target.value})
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    // Here I will need to change this action dispatch to a thunk dispatch which will fetch the user with that email (later to be OAuth)
+    this.props.setCurrentUser(1, 'Dylan', 'dylan@dylan.org');
+    this.setState({email: '', password: ''})
+  }
+
+  logOut = () => {
+    this.props.logoutCurrentUser()
+  }
+
+  render () {
+    const { currentUser } = this.props;
+    return(
+      <header className='Header--header'>
+        <h1>Family Secrets</h1>
+        <div>
+          {!currentUser && 
+          <div>
+            <p>Login:</p>
+            <form onSubmit={this.handleSubmit}>
+              <input 
+                onChange={this.handleChange}
+                placeholder='Email'
+                name='email'
+                type='email'
+                value={this.state.name}/>           
+              <input
+                onChange={this.handleChange}
+                placeholder='password'
+                name='password'
+                type='password'
+                value={this.state.password}/>
+              <button>Submit</button>
+            </form>
+          </div> }
+          {currentUser && 
+          <div>
+            <p>Hello {currentUser.name}!</p>
+            <img 
+              src='https://i.imgur.com/pmla6oJ.jpg' 
+              alt='You'
+              className='Header--img'/>
+            <button onClick={this.logOut}>LogOut</button>
+          </div>
+          }
+        </div>
+      </header>
+    )
+  };
 };
 
-export default Header
+export const mapStateToProps = state => ({
+  currentUser: state.currentUser
+})
+
+export const mapDispatchToProps = dispatch => ({
+  setCurrentUser: (id, name, email) => dispatch(setCurrentUser(id, name, email)),
+  logoutCurrentUser: () => dispatch(logoutCurrentUser())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
