@@ -8,7 +8,7 @@ describe('currentUserReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should return an id when type is SET_CURRENT_FAMILY', () => {
+  it('should return a user object when type is SET_CURRENT_FAMILY', () => {
     const mockUserId = 1;
     const mockUserName = 'Dylan';
     const mockUseremail = 'dylan@dylan.org'
@@ -21,4 +21,17 @@ describe('currentUserReducer', () => {
     const result = currentUserReducer(initialState, actions.setCurrentUser(mockUserId, mockUserName, mockUseremail));
     expect(result).toEqual(expected);
   });
+
+  it('should return null when type is LOG_OUT', () => {
+    const mockUserId = 1;
+    const mockUserName = 'Dylan';
+    const mockUseremail = 'dylan@dylan.org'
+    const initialState = {
+      id: mockUserId,
+      name: mockUserName,
+      email: mockUseremail
+    }
+    const result = currentUserReducer(initialState, actions.logoutCurrentUser());
+    expect(result).toEqual(null);
+  })
 });
