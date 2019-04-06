@@ -5,6 +5,9 @@ import * as mockData from '../../mockData';
 import Card from '../Card/Card';
 
 export class CardArea extends Component{
+  state = {
+    showForm: false
+  }
   //Here we will need to add a fetch call for the user's family stories/recipes/photos
   generateCards = () => {
     const { currentFamily, currentView } = this.props
@@ -19,21 +22,21 @@ export class CardArea extends Component{
     })
 
     switch(currentView) {
-      case 'Stories':
+      case 'stories':
         const storyCards = familyStories.map(story => {
           return(
             <Card {...story}/>
           )
         })
         return storyCards;
-      case 'Recipes':
+      case 'recipes':
         const recipeCards = familyRecipes.map(recipe => {
           return(
             <Card {...recipe}/>
           )
         })
         return recipeCards;
-      case 'Photos':
+      case 'images':
         const photoCards = familyPhotos.map(photo => {
           return(
             <Card {...photo}/>
@@ -45,6 +48,14 @@ export class CardArea extends Component{
     }
   }
 
+  showForm = () => {
+    this.setState({showForm: true})
+  }
+
+  findForm = () => {
+
+  }
+
   render() {
     const { currentView, currentUser, currentFamily} = this.props;
     return (
@@ -53,10 +64,22 @@ export class CardArea extends Component{
         {(currentUser && !currentFamily && !currentView) && <h2>Select a family and category to start browsing your family secrets!</h2>}
         {(currentUser && !currentFamily && currentView) && <h2>Select a family name to see your {currentView}</h2>}
         {(currentUser && currentFamily && !currentView) && <h2>Select Stories, Recipes or Photos!</h2>}
-        {(currentUser && currentView && currentFamily) && <h2>My Family {currentView}:</h2>}
-        <div className='CardArea--div'>
-          {this.generateCards()}
-        </div>
+        {
+          (currentUser && currentView && currentFamily) && 
+          <div>
+            <h2>My Family {currentView}:</h2>
+            <i className="fas fa-plus" onClick={this.showForm}></i> 
+          </div>  
+        }
+        {
+          !this.state.showForm ? 
+          <div className='CardArea--div'>
+            {this.generateCards()}
+          </div> :
+          <div>
+            {this.findForm()}
+          </div>
+        }
       </div>
     )
   }
