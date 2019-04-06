@@ -45,10 +45,13 @@ export class CardArea extends Component{
   }
 
   render() {
-    const { currentView } = this.props;
+    const { currentView, currentUser, currentFamily} = this.props;
     return (
       <div className='CardArea'>
-        <h2>My Family {currentView}</h2>
+        {!currentUser && <h2>Login to see your family Secrets!</h2>}
+        {(currentUser && currentView) && <h2>Select a family name to see your {currentView}</h2>}
+        {(currentUser && currentFamily) && <h2>Select Stories, Recipes or Photos!</h2>}
+        {(currentUser && currentView && currentFamily) && <h2>My Family {currentView}</h2>}
         <div className='CardArea--div'>
           {this.generateCards()}
         </div>
@@ -59,7 +62,8 @@ export class CardArea extends Component{
 
 export const mapStateToProps = state => ({
   currentView: state.currentView,
-  currentFamily: state.currentFamily
+  currentFamily: state.currentFamily,
+  currentUser: state.currentUser
 })
 export default connect(mapStateToProps)(CardArea);
 
