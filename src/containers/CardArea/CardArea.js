@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as mockData from '../../mockData';
 import Card from '../Card/Card';
+import StoryForm from '../StoryForm/StoryForm';
+import RecipeForm from '../RecipeForm/RecipeForm';
+import ImageForm from '../ImageForm/ImageForm';
 
 export class CardArea extends Component{
   state = {
@@ -53,7 +56,16 @@ export class CardArea extends Component{
   }
 
   findForm = () => {
-
+    switch(this.props.currentView) {
+      case 'stories':
+        return <StoryForm showForm={this.showForm}/>
+      case 'recipes':
+        return <RecipeForm showForm={this.showForm}/>
+      case 'images':
+        return <ImageForm showForm={this.showForm}/>
+      default:
+        return <div></div>
+    }
   }
 
   render() {
