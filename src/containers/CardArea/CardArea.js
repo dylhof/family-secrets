@@ -5,6 +5,7 @@ import * as mockData from '../../mockData';
 import Card from '../Card/Card';
 
 export class CardArea extends Component{
+  //Here we will need to add a fetch call for the user's family stories/recipes/photos
   generateCards = () => {
     const { currentFamily, currentView } = this.props
     const familyStories = mockData.stories.filter(story => {
@@ -49,9 +50,10 @@ export class CardArea extends Component{
     return (
       <div className='CardArea'>
         {!currentUser && <h2>Login to see your family Secrets!</h2>}
-        {(currentUser && currentView) && <h2>Select a family name to see your {currentView}</h2>}
-        {(currentUser && currentFamily) && <h2>Select Stories, Recipes or Photos!</h2>}
-        {(currentUser && currentView && currentFamily) && <h2>My Family {currentView}</h2>}
+        {(currentUser && !currentFamily && !currentView) && <h2>Select a family and category to start browsing your family secrets!</h2>}
+        {(currentUser && !currentFamily && currentView) && <h2>Select a family name to see your {currentView}</h2>}
+        {(currentUser && currentFamily && !currentView) && <h2>Select Stories, Recipes or Photos!</h2>}
+        {(currentUser && currentView && currentFamily) && <h2>My Family {currentView}:</h2>}
         <div className='CardArea--div'>
           {this.generateCards()}
         </div>
