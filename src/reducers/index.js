@@ -4,6 +4,10 @@ import { loadingReducer } from './loadingReducer';
 import { currentViewReducer } from './currentViewReducer';
 import { currentFamilyReducer } from './currentFamilyReducer';
 import { currentUserReducer } from './currentUserReducer';
+import { familiesReducer } from './familiesReducer';
+import { storiesReducer } from './storiesReducer';
+import { recipesReducer } from './recipesReducer';
+import { photosReducer } from './photosReducer';
 
 
 export const rootReducer = combineReducers({
@@ -11,5 +15,9 @@ export const rootReducer = combineReducers({
   isLoading: loadingReducer,
   currentView: currentViewReducer,
   currentFamily: currentFamilyReducer,
-  currentUser: currentUserReducer
+  currentUser: currentUserReducer,
+  families: familiesReducer,
+  stories: storiesReducer,
+  recipes: recipesReducer,
+  photos: photosReducer,
 });
