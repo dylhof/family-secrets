@@ -14,4 +14,30 @@ describe('recipesReducer', () => {
     const result = recipesReducer(initialState, actions.setRecipes(mockData.recipes));
     expect(result).toEqual(mockData.recipes);
   });
+
+  it('should return recipes plus one when type is ADD_RECIPE', () => {
+    const initialState = mockData.recipes;
+    const mockNewRecipe = {
+      name: 'cake',
+      ingredients: 'cakemix \n frosting \n sprinkles',
+      instructions: 'make the cake'
+    };
+    const result = recipesReducer(initialState, actions.addRecipe(mockNewRecipe));
+    expect(result.length).toBe(initialState.length + 1);
+  });
+
+  it('should return recipes minus one when type is DELETE_RECIPE', () => {
+    const initialState = mockData.recipes;
+    const mockId = mockData.recipes[0].id;
+    const result = recipesReducer(initialState, actions.deleteRecipe(mockId));
+    expect(result.length).toBe(initialState.length - 1);
+  });
+
+  it('should return recipes with one updated', () => {
+    const initialState = mockData.recipes;
+    const mockUpdatedRecipe = {...initialState[1], name: 'something else'};
+    const expected = [initialState[0], mockUpdatedRecipe, initialState[2]];
+    const result = recipesReducer(initialState, actions.updateRecipe(mockUpdatedRecipe));
+    expect(result).toEqual(expected);
+  });
 });
