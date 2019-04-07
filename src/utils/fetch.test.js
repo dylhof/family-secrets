@@ -7,7 +7,7 @@ describe('Utils', () => {
 
     it('should return families', async () => {
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-        json: mockData.families,
+        json: jest.fn().mockImplementation(() => Promise.resolve(mockData.families)),
         status: 200
       }));
       const result = await fetchData(mockPath);
