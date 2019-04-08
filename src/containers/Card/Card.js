@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as mockData from '../../mockData';
 
 export class Card extends Component {
   generateCard = () => {
     const { currentView, title, story, name, ingredients, instructions, photo, caption} = this.props
     switch(currentView) {
-      case 'Stories':
+      case 'stories':
         return(
           <div className='Card--div'>
             <h3>{title}</h3>
             <p className='Card--p--story'>{story}</p>
           </div>
         ) 
-      case 'Recipes':
+      case 'recipes':
         return(
           <div className='Card--div'>
             <h3>{name}</h3>
@@ -24,7 +23,7 @@ export class Card extends Component {
             <p>{instructions}</p>
           </div>
         )
-      case 'Photos':
+      case 'images':
         return (
           <div className='Card--div'>
             <img src={photo} alt={caption}/>
