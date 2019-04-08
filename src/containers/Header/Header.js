@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setCurrentUser, logoutCurrentUser } from '../../actions';
+import { apiThunk } from '../../thunks/apiThunk';
 
 export class Header extends Component {
   constructor() {
@@ -17,7 +18,8 @@ export class Header extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    // Here I will need to change this action dispatch to a thunk dispatch which will fetch the user with that email (later to be OAuth)
+    // Here I will need to change this action dispatch to a thunk dispatch which will fetch the user with that email (later to be OAuth):
+    this.props.apiThunk('/families', 'setFamilies')
     this.props.setCurrentUser(1, 'Dylan', 'dylan@dylan.org');
     this.setState({email: '', password: ''})
   }
@@ -73,7 +75,8 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   setCurrentUser: (id, name, email) => dispatch(setCurrentUser(id, name, email)),
-  logoutCurrentUser: () => dispatch(logoutCurrentUser())
+  logoutCurrentUser: () => dispatch(logoutCurrentUser()),
+  apiThunk: (path, action) => dispatch(apiThunk(path, action))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
