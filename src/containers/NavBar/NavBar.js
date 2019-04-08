@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setCurrentView, setCurrentFamily } from '../../actions';
 import { apiThunk } from '../../thunks/apiThunk';
+import FamilyForm from '../FamilyForm/FamilyForm';
 // import * as mockData from '../../mockData';
 
 export class NavBar extends Component{
+  constructor(){
+    super();
+    this.state = {
+      showAddFamily: false
+    }
+  }
+
   setView = (event) => {
     const {currentFamily} = this.props
     let view = event.target.innerText.toLowerCase();
@@ -38,14 +46,23 @@ export class NavBar extends Component{
     const id = parseInt(event.target.value);
     this.props.setCurrentFamily(id);     
   }
+
+  showAddFamily = () => {
+    this.setState({showAddFamily: !this.state.showAddFamily})
+  }
   
   render() {
+    const {currentUser} = this.props;
     return(
       <nav className='NavBar--nav'>
-        <select onChange={this.setFamily}>
-          <option value=''>Select a Family</option>
-          {this.generateOptions()}
-        </select>
+        <div>
+          <select onChange={this.setFamily}>
+            <option value=''>Select a Family</option>
+            {this.generateOptions()}
+          </select>
+          {currentUser && <i className="fas fa-plus" onClick={this.showAddFamily}></i>}
+        </div>
+        {currentUser && this.state.showAddFamily && <FamilyForm showForm={this.showAddFamily}/>}
         <ul>
           <li onClick={this.setView}>Stories</li>
           <li onClick={this.setView}>Photos</li>
@@ -67,7 +84,8 @@ export const mapStateToProps = state => ({
   currentFamily: state.currentFamily,
   stories: state.stories,
   recipes: state.recipes,
-  images: state.photos
+  images: state.photos,
+  currentUser: state.currentUser
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
