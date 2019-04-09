@@ -73,7 +73,8 @@ export class RecipeForm extends Component{
     event.preventDefault()
     const { currentFamily, showForm } = this.props
     const ingredients = this.makeIngredients()
-    const newRecipe = { title: this.state.title, ingredients, instructions: this.state.instructions }
+    const newRecipe = { title: this.state.title, ingredients, instructions: this.state.instructions, family_id: currentFamily}
+    console.log(newRecipe)
     const options = createOptions('POST', newRecipe)
     this.props.apiThunk(`/families/${currentFamily}/recipes`, 'addRecipe', options)
     showForm()
