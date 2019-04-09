@@ -35,6 +35,7 @@ export class FamilyForm extends Component{
           />
           <button>Submit</button>
         </form>
+        <button onClick={this.props.showForm}>Cancel</button>
       </div>
     )
   }
