@@ -1,7 +1,7 @@
 export const photosReducer = (state = [], action) => {
   switch(action.type) {
     case 'SET_PHOTOS':
-      return action.photos
+      return [...state, ...action.photos]
     case 'ADD_PHOTO':
       return [...state, action.photo]
     case 'DELETE_PHOTO':
