@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import * as mockData from '../../mockData';
+import * as mockData from '../../mockData';
 import Card from '../Card/Card';
 import StoryForm from '../StoryForm/StoryForm';
 import RecipeForm from '../RecipeForm/RecipeForm';
@@ -21,7 +21,7 @@ export class CardArea extends Component{
     const familyRecipes = recipes.filter(recipe => {
       return parseInt(recipe.family_id) === currentFamily
     })
-    const familyPhotos = photos.filter(photo => {
+    const familyPhotos = mockData.photos.filter(photo => {
       return parseInt(photo.family_id) === currentFamily
     })
 
