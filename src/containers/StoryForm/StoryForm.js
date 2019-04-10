@@ -29,6 +29,13 @@ export class StoryForm extends Component{
     this.setState({[event.target.name]: event.target.value})
   }
 
+  onSubmit = (event) => {
+    event.preventDefault()
+    const { currentFamily } = this.props
+    const options = createOptions('POST', {title: 'Awesome Story', content:'lalalala great story'})
+    this.props.apiThunk(`/families/${currentFamily}/stories`, 'addStory', options)
+  }
+
   render() {
     return(
       <div>
