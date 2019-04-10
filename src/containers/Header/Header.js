@@ -8,7 +8,8 @@ export class Header extends Component {
     super();
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      showLogin: false
     }
   }
 
@@ -27,13 +28,20 @@ export class Header extends Component {
     this.props.logoutCurrentUser()
   }
 
+  toggleLogin = () => {
+    this.setState({showLogin: !this.state.showLogin})
+  }
+
   render () {
     const { currentUser } = this.props;
+    const { showLogin, name, password } = this.state
     return(
       <header className='Header--header'>
         <h1>Family Secrets</h1>
         <div>
-          {!currentUser && 
+          {(!currentUser && !showLogin) && 
+          <button onClick={this.toggleLogin}>Login</button>}
+          {(!currentUser && showLogin) &&
           <div>
             <p>Login:</p>
             <form onSubmit={this.handleSubmit}>
@@ -42,15 +50,16 @@ export class Header extends Component {
                 placeholder='Email'
                 name='email'
                 type='email'
-                value={this.state.name}/>           
+                value={name}/>           
               <input
                 onChange={this.handleChange}
                 placeholder='password'
                 name='password'
                 type='password'
-                value={this.state.password}/>
-              <button>Submit</button>
+                value={password}/>
+              <button>Login</button>
             </form>
+            <button onClick={this.toggleLogin}>Cancel</button>
           </div> }
           {currentUser && 
           <div>
