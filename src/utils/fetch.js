@@ -7,6 +7,8 @@ export const fetchData = async (path, options, id) => {
     throw new Error(error)
   } else if(response.status === 204){ 
     return id
+  } else if (response.status === 206) {
+    let text = await response.text()
   } else {
     let data = await response.json()
     if(data.data) {

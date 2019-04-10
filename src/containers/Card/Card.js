@@ -6,22 +6,44 @@ import { apiThunk } from '../../thunks/apiThunk';
 import { createOptions } from '../../utils/fetch';
 
 export class Card extends Component {
+  constructor() {
+    super()
+    this.state = {
+      expanded: false
+    }
+  }
   deleteCard = (action, id, type) => {
     const { currentFamily, apiThunk } = this.props
     const options = createOptions('DELETE')
     const path = `families/${currentFamily}/${type}/${id}`
     apiThunk(path, action, options, id)
   }
+
   deleteImageCard = (id) => {
     deletePhoto(id)
   }
+
+  addExpanded = (event) => {
+    event.target.parentElement.classList.add('expanded')
+    this.setState({expanded: !this.state.expanded})
+  }
+
+  unExpand = (event) => {
+    event.target.parentElement.classList.remove('expanded')
+    this.setState({expanded: !this.state.expanded})
+  }
+
+
   generateCard = () => {
     const { currentView, title, content, author, name, ingredients, instructions, photo, caption, showForm, id} = this.props
+    const { expanded } = this.state
     switch(currentView) {
       case 'stories':
         return(
-          <div className='Card--div'>
+          <div className='Card--div' >
             <h3>{title}</h3>
+            {expanded && <i className="far fa-times-circle" onClick={this.unExpand}></i>}
+            {!expanded && <i className="fas fa-expand-arrows-alt" onClick={this.addExpanded}></i>}
             <i className="fas fa-pencil-alt" onClick={() => showForm({title, content})}></i>
             <i className="far fa-trash-alt" onClick={() => this.deleteCard('deleteStory', id, 'stories')}></i>
             <p className='Card--p--story'>{content}</p>
