@@ -20,6 +20,8 @@ export const recipesReducer = (state = [], action) => {
         }
       })
       return updatedRecipes
+    case 'LOG_OUT':
+      return []
     default: 
       return state
   };
