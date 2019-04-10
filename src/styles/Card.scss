@@ -26,3 +26,16 @@
     margin: 5px;
   }
 }
+
+.expanded {
+  height: 100%;
+  width: 90vw;
+  position: absolute;
+  top: 230px;
+  left: 50%;
+  margin: 0 0 0 -45vw;
+  z-index: 10;
+  background: $body-color
+
+
+}
