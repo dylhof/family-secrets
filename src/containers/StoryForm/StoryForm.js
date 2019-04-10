@@ -21,7 +21,6 @@ export class StoryForm extends Component{
       family_id: currentFamily, 
       author: this.state.author}
     const options = createOptions('POST', newStory)
-    console.log(options)
     this.props.apiThunk(`/families/${currentFamily}/stories`, 'addStory', options)
     showForm()
   }
