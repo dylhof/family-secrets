@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import * as mockData from '../../mockData';
+import * as mockData from '../../mockData';
 import Card from '../Card/Card';
 import StoryForm from '../StoryForm/StoryForm';
 import RecipeForm from '../RecipeForm/RecipeForm';
