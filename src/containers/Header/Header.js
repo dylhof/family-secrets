@@ -42,8 +42,7 @@ export class Header extends Component {
           {(!currentUser && !showLogin) && 
           <button onClick={this.toggleLogin}>Login</button>}
           {(!currentUser && showLogin) &&
-          <div>
-            <p>Login:</p>
+          <div className='Header--div--form'>
             <form onSubmit={this.handleSubmit}>
               <input 
                 onChange={this.handleChange}
