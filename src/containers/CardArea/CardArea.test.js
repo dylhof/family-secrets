@@ -5,16 +5,16 @@ import * as mockData from '../../mockData';
 
 describe('CardArea', () => {
   let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<CardArea/>)
-  });
+  const mockStories = mockData.stories
+  const mockRecipes = mockData.recipes
+  const mockPhotos = mockData.photos
 
   it('should match the snapshot if current View is Stories', () => {
     wrapper = shallow(
       <CardArea 
-      currentView='Stories' 
+      currentView='stories' 
       currentFamily='2'
+      stories={mockStories}
     />)
     expect(wrapper).toMatchSnapshot();
   });
@@ -22,17 +22,19 @@ describe('CardArea', () => {
   it('should match the snapshot if current View is Recipes', () => {
     wrapper = shallow(
       <CardArea 
-      currentView='Recipes' 
+      currentView='recipes' 
       currentFamily='2'
+      recipes={mockRecipes}
     />)
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should match the snapshot if current View is Photos', () => {
+  it('should match the snapshot if current View is images', () => {
     wrapper = shallow(
       <CardArea 
-      currentView='Photos' 
+      currentView='images' 
       currentFamily='2'
+      photos={mockPhotos}
     />)
     expect(wrapper).toMatchSnapshot();
   });

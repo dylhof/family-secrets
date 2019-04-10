@@ -1,18 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardArea should match the snapshot if current View is Photos 1`] = `
-<div
-  className="CardArea"
->
-  <h2>
-    Login to see your family Secrets!
-  </h2>
-  <div
-    className="CardArea--div"
-  />
-</div>
-`;
-
 exports[`CardArea should match the snapshot if current View is Recipes 1`] = `
 <div
   className="CardArea"
@@ -27,6 +14,19 @@ exports[`CardArea should match the snapshot if current View is Recipes 1`] = `
 `;
 
 exports[`CardArea should match the snapshot if current View is Stories 1`] = `
+<div
+  className="CardArea"
+>
+  <h2>
+    Login to see your family Secrets!
+  </h2>
+  <div
+    className="CardArea--div"
+  />
+</div>
+`;
+
+exports[`CardArea should match the snapshot if current View is images 1`] = `
 <div
   className="CardArea"
 >

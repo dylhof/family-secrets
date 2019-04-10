@@ -15,18 +15,12 @@ export class CardArea extends Component{
   
   generateCards = () => {
     const { currentFamily, currentView, stories, photos, recipes } = this.props
-    const familyStories = stories.filter(story => {
-      return parseInt(story.family_id) === currentFamily
-    });
-    const familyRecipes = recipes.filter(recipe => {
-      return parseInt(recipe.family_id) === currentFamily
-    })
-    const familyPhotos = mockData.photos.filter(photo => {
-      return parseInt(photo.family_id) === currentFamily
-    })
-
+    
     switch(currentView) {
       case 'stories':
+        const familyStories = stories.filter(story => {
+          return parseInt(story.family_id) === currentFamily
+        });
         const storyCards = familyStories.map(story => {
           return(
             <Card {...story} showForm={this.showForm}/>
@@ -34,6 +28,9 @@ export class CardArea extends Component{
         })
         return storyCards;
       case 'recipes':
+        const familyRecipes = recipes.filter(recipe => {
+          return parseInt(recipe.family_id) === currentFamily
+        })
         const recipeCards = familyRecipes.map(recipe => {
           return(
             <Card {...recipe} showForm={this.showForm}/>
@@ -41,6 +38,9 @@ export class CardArea extends Component{
         })
         return recipeCards;
       case 'images':
+        const familyPhotos = mockData.photos.filter(photo => {
+          return parseInt(photo.family_id) === currentFamily
+        })
         const photoCards = familyPhotos.map(photo => {
           return(
             <Card {...photo} showForm={this.showForm}/>
