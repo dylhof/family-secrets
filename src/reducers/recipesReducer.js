@@ -1,7 +1,7 @@
 export const recipesReducer = (state = [], action) => {
   switch(action.type) {
     case 'SET_RECIPES':
-      return action.recipes
+      return [...state, ...action.recipes]
     case 'ADD_RECIPE':
       return [...state, action.recipes]
     case 'DELETE_RECIPE':

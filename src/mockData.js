@@ -46,21 +46,24 @@ export const recipes = [
 export const stories = [
   {
     title: 'my hair',
-    story: 'do some stuff Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo nunc, dignissim et bibendum pulvinar, tristique in nisi. Phasellus consectetur ullamcorper libero, eu scelerisque nunc finibus ut. Pellentesque in purus laoreet, tristique leo sed, sodales nisl. Nullam aliquet et nunc sit amet cursus. Phasellus tempor mauris ac orci tincidunt, a lacinia massa iaculis. Phasellus ipsum nisi, bibendum ac maximus hendrerit, congue quis felis. Curabitur quam nisl, tempor vel dolor a, suscipit tincidunt nisl. Phasellus leo ex, dictum id dapibus ut, egestas sed massa. Integer et lacinia felis. Nullam dui risus, suscipit in finibus nec, lacinia nec erat. Curabitur non justo purus. Nam at tempor arcu. Aliquam pharetra at nisi in placerat. Sed dignissim fermentum dui, ut feugiat nunc rutrum ac.',
+    content: 'do some stuff Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo nunc, dignissim et bibendum pulvinar, tristique in nisi. Phasellus consectetur ullamcorper libero, eu scelerisque nunc finibus ut. Pellentesque in purus laoreet, tristique leo sed, sodales nisl. Nullam aliquet et nunc sit amet cursus. Phasellus tempor mauris ac orci tincidunt, a lacinia massa iaculis. Phasellus ipsum nisi, bibendum ac maximus hendrerit, congue quis felis. Curabitur quam nisl, tempor vel dolor a, suscipit tincidunt nisl. Phasellus leo ex, dictum id dapibus ut, egestas sed massa. Integer et lacinia felis. Nullam dui risus, suscipit in finibus nec, lacinia nec erat. Curabitur non justo purus. Nam at tempor arcu. Aliquam pharetra at nisi in placerat. Sed dignissim fermentum dui, ut feugiat nunc rutrum ac.',
     family_id: 3,
-    id: 1
+    id: 1,
+    author: 'Dylan'
   },
   {
     title: 'the family pony',
-    story: 'do some stuff Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo nunc, dignissim et bibendum pulvinar, tristique in nisi. Phasellus consectetur ullamcorper libero, eu scelerisque nunc finibus ut. Pellentesque in purus laoreet, tristique leo sed, sodales nisl. Nullam aliquet et nunc sit amet cursus. Phasellus tempor mauris ac orci tincidunt, a lacinia massa iaculis. Phasellus ipsum nisi, bibendum ac maximus hendrerit, congue quis felis. Curabitur quam nisl, tempor vel dolor a, suscipit tincidunt nisl. Phasellus leo ex, dictum id dapibus ut, egestas sed massa. Integer et lacinia felis. Nullam dui risus, suscipit in finibus nec, lacinia nec erat. Curabitur non justo purus. Nam at tempor arcu. Aliquam pharetra at nisi in placerat. Sed dignissim fermentum dui, ut feugiat nunc rutrum ac.',
+    content: 'do some stuff Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo nunc, dignissim et bibendum pulvinar, tristique in nisi. Phasellus consectetur ullamcorper libero, eu scelerisque nunc finibus ut. Pellentesque in purus laoreet, tristique leo sed, sodales nisl. Nullam aliquet et nunc sit amet cursus. Phasellus tempor mauris ac orci tincidunt, a lacinia massa iaculis. Phasellus ipsum nisi, bibendum ac maximus hendrerit, congue quis felis. Curabitur quam nisl, tempor vel dolor a, suscipit tincidunt nisl. Phasellus leo ex, dictum id dapibus ut, egestas sed massa. Integer et lacinia felis. Nullam dui risus, suscipit in finibus nec, lacinia nec erat. Curabitur non justo purus. Nam at tempor arcu. Aliquam pharetra at nisi in placerat. Sed dignissim fermentum dui, ut feugiat nunc rutrum ac.',
     family_id: 2,
-    id: 2
+    id: 2,
+    author: 'Dylan'
   },
   {
     title: 'the haunted car',
-    story: 'do some stuff Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo nunc, dignissim et bibendum pulvinar, tristique in nisi. Phasellus consectetur ullamcorper libero, eu scelerisque nunc finibus ut. Pellentesque in purus laoreet, tristique leo sed, sodales nisl. Nullam aliquet et nunc sit amet cursus. Phasellus tempor mauris ac orci tincidunt, a lacinia massa iaculis. Phasellus ipsum nisi, bibendum ac maximus hendrerit, congue quis felis. Curabitur quam nisl, tempor vel dolor a, suscipit tincidunt nisl. Phasellus leo ex, dictum id dapibus ut, egestas sed massa. Integer et lacinia felis. Nullam dui risus, suscipit in finibus nec, lacinia nec erat. Curabitur non justo purus. Nam at tempor arcu. Aliquam pharetra at nisi in placerat. Sed dignissim fermentum dui, ut feugiat nunc rutrum ac.',
+    content: 'do some stuff Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo nunc, dignissim et bibendum pulvinar, tristique in nisi. Phasellus consectetur ullamcorper libero, eu scelerisque nunc finibus ut. Pellentesque in purus laoreet, tristique leo sed, sodales nisl. Nullam aliquet et nunc sit amet cursus. Phasellus tempor mauris ac orci tincidunt, a lacinia massa iaculis. Phasellus ipsum nisi, bibendum ac maximus hendrerit, congue quis felis. Curabitur quam nisl, tempor vel dolor a, suscipit tincidunt nisl. Phasellus leo ex, dictum id dapibus ut, egestas sed massa. Integer et lacinia felis. Nullam dui risus, suscipit in finibus nec, lacinia nec erat. Curabitur non justo purus. Nam at tempor arcu. Aliquam pharetra at nisi in placerat. Sed dignissim fermentum dui, ut feugiat nunc rutrum ac.',
     family_id: 2,
-    id: 3
+    id: 3,
+    author: 'Dylan'
   }
 ]
 

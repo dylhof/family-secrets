@@ -1,7 +1,7 @@
 export const storiesReducer = (state = [], action) => {
   switch(action.type) {
     case 'SET_STORIES':
-      return action.stories
+      return [...state, ...action.stories]
     case 'ADD_STORY':
       return [...state, action.story]
     case 'DELETE_STORY':
