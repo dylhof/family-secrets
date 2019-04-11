@@ -71,43 +71,43 @@ export const photos = [
   {
     photo: 'https://i.imgur.com/6yHmlwT.jpg',
     caption: 'grumpy dinner cat',
-    family_id: 2,
+    family_id: 1,
     id: 1
   },
   {
     photo: 'https://i.imgur.com/dRxnay8.jpg',
     caption: 'wall cat',
-    family_id: 3,
+    family_id: 1,
     id: 2
   },
   {
     photo: 'https://i.imgur.com/AD3MbBi.jpg',
     caption: 'money cat',
-    family_id: 2,
+    family_id: 1,
     id: 3
   },
   {
     photo: 'https://i.imgur.com/nZmjnkH.jpg',
     caption: 'Boss cat',
-    family_id: 3,
+    family_id: 1,
     id: 4
   },
   {
     photo: 'https://i.imgur.com/PJB6lKd.jpg',
     caption: 'Gremlin cat',
-    family_id: 3,
+    family_id: 1,
     id: 5
   },
   {
     photo: 'https://i.imgur.com/kwZFyk8.jpg',
     caption: 'Fancy collar cat',
-    family_id: 2,
+    family_id: 1,
     id: 6
   },
   {
     photo: 'https://i.imgur.com/leCMOWx.jpg',
     caption: 'orange snow cat',
-    family_id: 2,
+    family_id: 1,
     id: 7
   },
 ]
