@@ -4,8 +4,10 @@
   border: 3px solid $dark-accent-color;
   border-radius: 5px;
   box-shadow: 2px 2px 2px $dark-accent-color;
+  margin: 20px;
   
-  p {
+  p,
+  li {
     font-family: $body-font;
     font-family: $body-font;
     font-size: 13px;
@@ -13,24 +15,47 @@
     margin: 10px;
   }
   
-  img {
-    width: 200px;
-    max-height: 250px;
-    overflow: scroll;
+  li {
+    list-style-type: circle;
+    list-style-position: inside;
   }
 
-  .Card--p--story{
-    height: 225px;
+  img {
+    width: 230px;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid $dark-accent-color;
+  }
+
+  .Card--p--story {
+    height: 215px;
     overflow: scroll;
+    border: 1px solid $dark-accent-color;
+    border-radius: 5px;
   }
 
   h3 {
     font-family: $title-font;
-    font-size: 20px;
+    font-size: 30px;
+    height: 35px;
     color: $main-color;
     text-align: center;
     margin: 5px;
-    text-shadow: 1px 1px 1px 
+    text-shadow: 1px 1px 1px;
+    width: 55%;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  }
+
+  h5 {
+    font-family: $body-font;
+    margin: 10px;
+    font-size: 20px;
+  }
+
+  .far,
+  .fas {
+    color: $dark-accent-color;
   }
 }
 
@@ -43,6 +68,28 @@
   margin: 0 0 0 -45vw;
   z-index: 10;
   background: $body-color
+}
 
+.Card--div--title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
+.Card--div-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Card--p--caption {
+  width: 55%;
+  text-overflow: ellipsis;
+}
+
+.Card--div--ingredients,
+.Card--div--instructions {
+  height: 150px;
+  overflow: scroll;  
+  margin-right: 10px;
 }
