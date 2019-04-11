@@ -8,7 +8,8 @@ export class Header extends Component {
     super();
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      showLogin: false
     }
   }
 
@@ -27,39 +28,49 @@ export class Header extends Component {
     this.props.logoutCurrentUser()
   }
 
+  toggleLogin = () => {
+    this.setState({showLogin: !this.state.showLogin})
+  }
+
   render () {
     const { currentUser } = this.props;
+    const { showLogin, name, password } = this.state
     return(
       <header className='Header--header'>
         <h1>Family Secrets </h1>
         <div>
-          {!currentUser && 
-          <div>
-            <p>Login:</p>
+          {(!currentUser && !showLogin) && 
+          <button onClick={this.toggleLogin} className='Header--button--showlogin'>Login</button>}
+          {(!currentUser && showLogin) &&
+          <div className='Header--div--form'>
             <form onSubmit={this.handleSubmit}>
-              <input 
-                onChange={this.handleChange}
-                placeholder='Email'
-                name='email'
-                type='email'
-                value={this.state.name}/>           
-              <input
-                onChange={this.handleChange}
-                placeholder='password'
-                name='password'
-                type='password'
-                value={this.state.password}/>
-              <button>Submit</button>
+                <input 
+                  onChange={this.handleChange}
+                  placeholder='Email'
+                  name='email'
+                  type='email'
+                  value={name}/>           
+                <input
+                  onChange={this.handleChange}
+                  placeholder='password'
+                  name='password'
+                  type='password'
+                  value={password}/>
+              <button className='Header--button--login'>Login</button>
             </form>
-          </div> }
+            <button onClick={this.toggleLogin} className='Header--button--cancel'>Cancel</button>
+          </div> 
+          }
           {currentUser && 
-          <div>
-            <p>Hello {currentUser.name}!</p>
-            <img 
-              src='https://i.imgur.com/pmla6oJ.jpg' 
-              alt='You'
-              className='Header--img'/>
+          <div className='Header--div--user'>
             <button onClick={this.logOut}>LogOut</button>
+            <div className='Header--div--userName'>
+              <p>Hello {currentUser.name}!</p>
+              <img 
+                src='https://i.imgur.com/pmla6oJ.jpg' 
+                alt='You'
+                className='Header--img'/>
+            </div>
           </div>
           }
         </div>

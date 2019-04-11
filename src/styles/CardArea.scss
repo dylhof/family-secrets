@@ -1,8 +1,8 @@
 .CardArea {
 
   .CardArea--div{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr))
   }
 
   h2{
@@ -10,6 +10,21 @@
     margin: 20px;
     text-align: center;
     color: $main-color;
-    font-size: 30px;
+    font-size: 45px;
+    text-shadow: 1px 0px 1px #3d3537a3;
+  }
+
+  .CardArea--div--title {
+    display: flex;
+    align-items: center;
+
+    h2 {
+    width: 90%
+    }
+
+    .fas {
+      color: $dark-accent-color;
+      font-size: 30px;
+    }
   }
 }

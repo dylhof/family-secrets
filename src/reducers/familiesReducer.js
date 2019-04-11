@@ -20,6 +20,8 @@ export const familiesReducer = (state = [], action) => {
         }
       })
       return updatedFamilies
+    case 'LOG_OUT':
+      return []
     default: 
       return state;
   }

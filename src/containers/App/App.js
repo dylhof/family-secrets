@@ -15,7 +15,7 @@ export class App extends Component {
     return (
       <div className="App">
         <Header/>
-        {currentUser && <NavBar/>}
+        <NavBar/>
         <CardArea/>
         {error && <Error/>}
         {isLoading && <Loading/>}

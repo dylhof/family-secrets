@@ -26,7 +26,8 @@ export class FamilyForm extends Component{
 
   render() {
     return(
-      <div>
+      <div className='FamilyForm--div'> 
+        <h3>Add a new family name:</h3>
         <form onSubmit={this.handleSubmit}>
           <input
             placeholder='Family Name'

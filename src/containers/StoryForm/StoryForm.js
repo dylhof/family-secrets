@@ -21,7 +21,7 @@ export class StoryForm extends Component{
       family_id: currentFamily, 
       author: this.state.author}
     const options = createOptions('POST', newStory)
-    this.props.apiThunk(`/families/${currentFamily}/stories`, 'addStory', options)
+    this.props.apiThunk(`families/${currentFamily}/stories`, 'addStory', options)
     showForm()
   }
 
@@ -33,19 +33,21 @@ export class StoryForm extends Component{
     event.preventDefault()
     const { currentFamily } = this.props
     const options = createOptions('POST', {title: 'Awesome Story', content:'lalalala great story'})
-    this.props.apiThunk(`/families/${currentFamily}/stories`, 'addStory', options)
+    this.props.apiThunk(`families/${currentFamily}/stories`, 'addStory', options)
   }
 
   render() {
     return(
-      <div>
+      <div className='StoryForm--div'>
+        <h3>Add a family story:</h3>
         <form onSubmit={this.onSubmit}>
           <input
             placeholder='Add a Title'
             value={this.state.title}
             name='title'
             onChange={this.handleChange}/>
-          <input
+          <textarea
+            className='StoryForm--div--storyInput'
             placeholder='Add your Story'
             value={this.state.content}
             name='content'

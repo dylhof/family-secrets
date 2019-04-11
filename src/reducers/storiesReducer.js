@@ -20,6 +20,8 @@ export const storiesReducer = (state = [], action) => {
         }
       })
       return updatedStories
+    case 'LOG_OUT':
+      return []
     default: 
       return state
   };

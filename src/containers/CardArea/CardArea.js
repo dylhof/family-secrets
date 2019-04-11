@@ -23,7 +23,7 @@ export class CardArea extends Component{
         });
         const storyCards = familyStories.map(story => {
           return(
-            <Card {...story} showForm={this.showForm}/>
+            <Card key={story.id} {...story} showForm={this.showForm}/>
           )
         })
         return storyCards;
@@ -33,7 +33,7 @@ export class CardArea extends Component{
         })
         const recipeCards = familyRecipes.map(recipe => {
           return(
-            <Card {...recipe} showForm={this.showForm}/>
+            <Card key={recipe.id} {...recipe} showForm={this.showForm}/>
           )
         })
         return recipeCards;
@@ -43,7 +43,7 @@ export class CardArea extends Component{
         })
         const photoCards = familyPhotos.map(photo => {
           return(
-            <Card {...photo} showForm={this.showForm}/>
+            <Card key={photo.id} {...photo} showForm={this.showForm}/>
           )
         })
         return photoCards
@@ -72,15 +72,17 @@ export class CardArea extends Component{
 
   render() {
     const { currentView, currentUser, currentFamily} = this.props;
+    const { showForm } = this.state;
     return (
       <div className='CardArea'>
         {!currentUser && <h2>Login to see your family Secrets!</h2>}
-        {(currentUser && !currentFamily && !currentView) && <h2>Select a family and category to start browsing your family secrets!</h2>}
+        {(currentUser && !currentFamily && !currentView) && 
+        <h2>Select a family and category to start browsing your family secrets!</h2>}
         {(currentUser && !currentFamily && currentView) && <h2>Select a family name to see your {currentView}</h2>}
         {(currentUser && currentFamily && !currentView) && <h2>Select Stories, Recipes or Photos!</h2>}
         {
           (currentUser && currentView && currentFamily) && 
-          <div>
+          <div className='CardArea--div--title'>
             <h2>My Family {currentView}:</h2>
             <i className="fas fa-plus" onClick={this.showForm}></i> 
           </div>  

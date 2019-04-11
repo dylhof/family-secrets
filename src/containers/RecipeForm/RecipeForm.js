@@ -74,15 +74,15 @@ export class RecipeForm extends Component{
     const { currentFamily, showForm } = this.props
     const ingredients = this.makeIngredients()
     const newRecipe = { title: this.state.title, ingredients, instructions: this.state.instructions, family_id: currentFamily}
-    console.log(newRecipe)
     const options = createOptions('POST', newRecipe)
-    this.props.apiThunk(`/families/${currentFamily}/recipes`, 'addRecipe', options)
+    this.props.apiThunk(`families/${currentFamily}/recipes`, 'addRecipe', options)
     showForm()
   }
 
   render() {
     return(
       <div className='RecipeForm--div'>
+        <h3>Add a family recipe:</h3>
         <form onSubmit={this.handleSubmit}>
           <input
             placeholder='Add Recipe name'
@@ -90,7 +90,8 @@ export class RecipeForm extends Component{
             value={this.state.title}
             name='title'/>
           {this.createInputs()}
-          <input 
+          <textarea 
+            className='RecipeForm--input--instructions'
             placeholder='Add Instructions'
             onChange={this.handleChange}
             value={this.state.instructions}

@@ -20,6 +20,8 @@ export const photosReducer = (state = [], action) => {
         }
       })
       return updatedPhotos
+    case 'LOG_OUT':
+      return []
     default: 
       return state
   };
