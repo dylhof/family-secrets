@@ -23,7 +23,7 @@ export class CardArea extends Component{
         });
         const storyCards = familyStories.map(story => {
           return(
-            <Card {...story} showForm={this.showForm}/>
+            <Card key={story.id} {...story} showForm={this.showForm}/>
           )
         })
         return storyCards;
@@ -33,7 +33,7 @@ export class CardArea extends Component{
         })
         const recipeCards = familyRecipes.map(recipe => {
           return(
-            <Card {...recipe} showForm={this.showForm}/>
+            <Card key={recipe.id} {...recipe} showForm={this.showForm}/>
           )
         })
         return recipeCards;
@@ -43,7 +43,7 @@ export class CardArea extends Component{
         })
         const photoCards = familyPhotos.map(photo => {
           return(
-            <Card {...photo} showForm={this.showForm}/>
+            <Card key={photo.id} {...photo} showForm={this.showForm}/>
           )
         })
         return photoCards
