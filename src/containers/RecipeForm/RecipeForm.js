@@ -90,7 +90,7 @@ export class RecipeForm extends Component{
             value={this.state.title}
             name='title'/>
           {this.createInputs()}
-          <input 
+          <textarea 
             className='RecipeForm--input--instructions'
             placeholder='Add Instructions'
             onChange={this.handleChange}
