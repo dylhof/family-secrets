@@ -25,12 +25,12 @@ export class Card extends Component {
   }
 
   addExpanded = (event) => {
-    event.target.parentElement.classList.add('expanded')
+    event.target.parentElement.parentElement.classList.add('expanded')
     this.setState({expanded: !this.state.expanded})
   }
 
   unExpand = (event) => {
-    event.target.parentElement.classList.remove('expanded')
+    event.target.parentElement.parentElement.classList.remove('expanded')
     this.setState({expanded: !this.state.expanded})
   }
 
@@ -78,7 +78,7 @@ export class Card extends Component {
           <div className='Card--div'>
             <img src={photo} alt={caption}/>
             <div className='Card--div-caption'>
-              <p className='Card--p--caption'>{caption}</p>
+              <h3 className='Card--h3--caption'>{caption}</h3>
               {expanded && <i className="far fa-times-circle" onClick={this.unExpand}></i>}
               {!expanded && <i className="fas fa-expand-arrows-alt" onClick={this.addExpanded}></i>}
               <i className="fas fa-pencil-alt" onClick={() => showForm({caption})}></i>
