@@ -36,7 +36,7 @@
 
   h3 {
     font-family: $title-font;
-    font-size: 30px;
+    font-size: 20px;
     height: 35px;
     color: $main-color;
     text-align: center;
@@ -45,6 +45,7 @@
     width: 55%;
     overflow: hidden;
     text-overflow: ellipsis; 
+    white-space: nowrap;
   }
 
   h5 {
@@ -75,13 +76,17 @@
   width: 55%;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap; 
 }
 
 .Card--div--ingredients,
 .Card--div--instructions {
-  height: 150px;
+  height: 130px;
   overflow: scroll;  
   margin-right: 10px;
+  border: 1px solid $dark-accent-color;
+  margin: 5px;
+  border-radius: 5px; 
 }
 
 .expanded {
@@ -118,7 +123,7 @@
 
   .Card--div--ingredients,
   .Card--div--instructions {
-    height: 45%;
+    height: 43%;
     overflow: scroll;  
     margin-right: 10px;
   }
