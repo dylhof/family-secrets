@@ -8,6 +8,7 @@ export const apiThunk = (path, action, options, id) => {
       const data = await fetchData(path, options, id);
       dispatch(actions.setIsLoading(false));
       dispatch(actions[action](data))
+      dispatch(actions.clearError())
     } catch (error) {
       dispatch(actions.setIsLoading(false));
       dispatch(actions.setError(error.message))

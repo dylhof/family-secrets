@@ -19,7 +19,7 @@ export class Header extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.apiThunk('/families', 'setFamilies')
+    this.props.apiThunk('families', 'setFamilies')
     this.props.setCurrentUser(1, 'Dylan', 'dylan@dylan.org');
     this.setState({email: '', password: ''})
   }
@@ -37,7 +37,7 @@ export class Header extends Component {
     const { showLogin, name, password } = this.state
     return(
       <header className='Header--header'>
-        <h1>Family Secrets</h1>
+        <h1>Family Secrets </h1>
         <div>
           {(!currentUser && !showLogin) && 
           <button onClick={this.toggleLogin} className='Header--button--showlogin'>Login</button>}

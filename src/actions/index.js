@@ -113,3 +113,7 @@ export const logOut = () => ({
   type: 'LOG_OUT'
 })
 
+export const clearError = () => ({
+  type: 'CLEAR_ERROR'
+})
+

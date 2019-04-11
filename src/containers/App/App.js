@@ -11,11 +11,11 @@ import CardArea from '../../containers/CardArea/CardArea';
 export class App extends Component {
 
   render() {
-    const { error, isLoading} = this.props
+    const { error, isLoading, currentUser} = this.props
     return (
       <div className="App">
         <Header/>
-        <NavBar/>
+        {currentUser && <NavBar/>}
         <CardArea/>
         {error && <Error/>}
         {isLoading && <Loading/>}
@@ -26,7 +26,8 @@ export class App extends Component {
 
 export const mapStateToProps = state => ({
   error: state.error,
-  isLoading: state.isLoading
+  isLoading: state.isLoading,
+  currentUser: state.currentUser
 });
 
 export default connect(mapStateToProps)(App);
