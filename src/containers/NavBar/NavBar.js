@@ -55,7 +55,7 @@ export class NavBar extends Component{
     const {currentUser} = this.props;
     return(
       <nav className='NavBar--nav'>
-        <div>
+        <div className='NavBar--div--select'>
           <select onChange={this.setFamily}>
             <option value=''>Select a Family</option>
             {this.generateOptions()}
