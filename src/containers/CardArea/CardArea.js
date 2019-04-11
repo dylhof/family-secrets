@@ -72,15 +72,17 @@ export class CardArea extends Component{
 
   render() {
     const { currentView, currentUser, currentFamily} = this.props;
+    const { showForm } = this.state;
     return (
       <div className='CardArea'>
         {!currentUser && <h2>Login to see your family Secrets!</h2>}
-        {(currentUser && !currentFamily && !currentView) && <h2>Select a family and category to start browsing your family secrets!</h2>}
+        {(currentUser && !currentFamily && !currentView) && 
+        <h2>Select a family and category to start browsing your family secrets!</h2>}
         {(currentUser && !currentFamily && currentView) && <h2>Select a family name to see your {currentView}</h2>}
         {(currentUser && currentFamily && !currentView) && <h2>Select Stories, Recipes or Photos!</h2>}
         {
           (currentUser && currentView && currentFamily) && 
-          <div>
+          <div className='CardArea--div--title'>
             <h2>My Family {currentView}:</h2>
             <i className="fas fa-plus" onClick={this.showForm}></i> 
           </div>  
