@@ -38,7 +38,8 @@ export class StoryForm extends Component{
 
   render() {
     return(
-      <div>
+      <div className='StoryForm--div'>
+        <h3>Add a family story:</h3>
         <form onSubmit={this.onSubmit}>
           <input
             placeholder='Add a Title'
@@ -46,6 +47,7 @@ export class StoryForm extends Component{
             name='title'
             onChange={this.handleChange}/>
           <input
+            className='StoryForm--div--storyInput'
             placeholder='Add your Story'
             value={this.state.content}
             name='content'
