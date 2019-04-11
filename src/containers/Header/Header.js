@@ -40,34 +40,37 @@ export class Header extends Component {
         <h1>Family Secrets</h1>
         <div>
           {(!currentUser && !showLogin) && 
-          <button onClick={this.toggleLogin}>Login</button>}
+          <button onClick={this.toggleLogin} className='Header--button--showlogin'>Login</button>}
           {(!currentUser && showLogin) &&
           <div className='Header--div--form'>
             <form onSubmit={this.handleSubmit}>
-              <input 
-                onChange={this.handleChange}
-                placeholder='Email'
-                name='email'
-                type='email'
-                value={name}/>           
-              <input
-                onChange={this.handleChange}
-                placeholder='password'
-                name='password'
-                type='password'
-                value={password}/>
-              <button>Login</button>
+                <input 
+                  onChange={this.handleChange}
+                  placeholder='Email'
+                  name='email'
+                  type='email'
+                  value={name}/>           
+                <input
+                  onChange={this.handleChange}
+                  placeholder='password'
+                  name='password'
+                  type='password'
+                  value={password}/>
+              <button className='Header--button--login'>Login</button>
             </form>
-            <button onClick={this.toggleLogin}>Cancel</button>
-          </div> }
+            <button onClick={this.toggleLogin} className='Header--button--cancel'>Cancel</button>
+          </div> 
+          }
           {currentUser && 
-          <div>
-            <p>Hello {currentUser.name}!</p>
-            <img 
-              src='https://i.imgur.com/pmla6oJ.jpg' 
-              alt='You'
-              className='Header--img'/>
+          <div className='Header--div--user'>
             <button onClick={this.logOut}>LogOut</button>
+            <div className='Header--div--userName'>
+              <p>Hello {currentUser.name}!</p>
+              <img 
+                src='https://i.imgur.com/pmla6oJ.jpg' 
+                alt='You'
+                className='Header--img'/>
+            </div>
           </div>
           }
         </div>
