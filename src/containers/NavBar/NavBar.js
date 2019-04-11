@@ -16,19 +16,15 @@ export class NavBar extends Component{
   setView = (event) => {
     const {currentFamily} = this.props
     let view = event.target.innerText.toLowerCase();
-
     if(view === 'photos') {
       view = 'images'
-    };
-
-    const content = this.props[view].findIndex(item => {
-      return item.family_id === currentFamily
+    }; 
+    const content = this.props[view].filter(item => {
+      return parseInt(item.family_id) === currentFamily
     })
-
-    if( content && currentFamily) {
+    if( !content.length && currentFamily) {
       this.props.apiThunk(`families/${currentFamily}/${view}`, `set${event.target.innerText}`)
     }
-
     this.props.setCurrentView(view);
   }
   
