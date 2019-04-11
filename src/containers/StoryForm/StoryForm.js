@@ -46,7 +46,7 @@ export class StoryForm extends Component{
             value={this.state.title}
             name='title'
             onChange={this.handleChange}/>
-          <input
+          <textarea
             className='StoryForm--div--storyInput'
             placeholder='Add your Story'
             value={this.state.content}
