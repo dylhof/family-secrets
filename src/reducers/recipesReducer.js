@@ -3,7 +3,7 @@ export const recipesReducer = (state = [], action) => {
     case 'SET_RECIPES':
       return [...state, ...action.recipes]
     case 'ADD_RECIPE':
-      return [...state, action.recipes]
+      return [...state, action.recipe]
     case 'DELETE_RECIPE':
       const recipesToFilter = [...state]
       const filteredRecipes = recipesToFilter.filter(recipe => {
